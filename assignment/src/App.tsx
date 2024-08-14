@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import DetailsFilm from "./components/DetailsFilm/DetailsFilm";
 import './App.css'
+import NotFound from "./components/NotFound";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -19,13 +20,13 @@ const App = () => {
         },
         {
           path: "*",
-          element: <div className="">NotFound</div>,
+          element:<NotFound/>,
         },
       ],
     },
   ]);
   return (
-    <div className="img w-screen h-full ">
+    <div className="img w-full h-full ">
       <RouterProvider router={router} />
     </div>
   );

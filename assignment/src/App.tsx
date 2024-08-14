@@ -1,6 +1,7 @@
 import HomePage from "./components/HomePage/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
+import DetailsFilm from "./components/DetailsFilm/DetailsFilm";
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -10,6 +11,10 @@ const App = () => {
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path: `/film/:id`,
+          element: <DetailsFilm />,
         },
         {
           path: "*",

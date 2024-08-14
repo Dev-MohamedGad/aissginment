@@ -2,6 +2,7 @@ import HomePage from "./components/HomePage/HomePage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import DetailsFilm from "./components/DetailsFilm/DetailsFilm";
+import './App.css'
 const App = () => {
   const router = createBrowserRouter([
     {
@@ -24,9 +25,9 @@ const App = () => {
     },
   ]);
   return (
-    <>
+    <div className="img w-screen h-full ">
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 };
 

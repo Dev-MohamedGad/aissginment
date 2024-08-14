@@ -1,19 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
-import Card from "../Card/Card";
 import { useEffect } from "react";
 import { fetchFilms } from "../../store/filmSlice";
 import Loader from "../Loader";
+import Card from "../Card/Card";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const films = useSelector((state: any) => state.films.films);
+  const films = useSelector((state) => state.films.films);
   const status = useSelector((state) => state.films.status);
-
 
   useEffect(() => {
     dispatch(fetchFilms());
-  }, [dispatch ]);
-  if (status === 'loading') {
+  }, [dispatch]);
+  if (status === "loading") {
     return <Loader />;
   }
   return (
@@ -23,7 +22,7 @@ const HomePage = () => {
           key={film.id}
           id={film.id}
           title={film.title}
-          image={"https://via.placeholder.com/50"}
+          image={"https://via.placeholder.com/250"}
           description={film.body}
         />
       ))}
